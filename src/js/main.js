@@ -89,16 +89,6 @@ $(function() {
 		});
 	}
 
-	function sumKcal() {
-		let mainSumKcal = 0;
-
-		$(".sum-kcal").each(function(index, elem) {
-			mainSumKcal += +$(elem).html();
-		});
-
-		return mainSumKcal;
-	}
-
 	function calculateNutrients() {
 		let sumArray = $(this).children('.sum').children('div');
 		let productRowsArray = $(this).children('.product');
@@ -140,5 +130,16 @@ $(function() {
 				}
 			}
 		});
+	}
+
+	
+	function sumKcal() {
+		let mainSumKcal = 0;
+
+		$(".sum-kcal").each(function(index, elem) {
+			mainSumKcal += +$(elem).html();
+		});
+
+		return mainSumKcal;
 	}
 });
