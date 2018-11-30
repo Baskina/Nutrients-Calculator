@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Fit</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script type="text/javascript" src="js/bundle.js"></script>
+</head>
+<body>
+	<div class="main" id="main">
+		<section class="section-user">
+			<div class="container">
+				<strong>Введите данные для расчета:</strong>
+				<form method="post">
+					<div class="form-inner">
+						<div class="col">
+							<input type="text" name="height" placeholder="Рост, см">
+							<input type="text" name="weight" placeholder="Вес, кг">
+							<input type="text" name="age" placeholder="Количество полных лет">
+							<select name="sex">
+								<option value="">мужской</option>
+								<option value="">женский</option>
+							</select>
+						</div>
+						<div class="col">
+							<select name="sport">
+								<option value="">5-7 раз в неделю</option>
+								<option value="">3-5 раз в неделю</option>
+								<option value="">1 раз в неделю</option>
+								<option value="">нет</option>
+							</select>
+							<select name="eating">
+								<option value="">6</option>
+								<option value="">5</option>
+								<option value="">4</option>
+								<option value="">3</option>
+								<option value="">2</option>
+								<option value="">1</option>
+							</select>
+						</div>
+						<div class="col">
+							<select name="target">
+								<option value="">набор массы</option>
+								<option value="">поддержание массы</option>
+								<option value="">сброс массы</option>
+							</select>
+						</div>
+					</div>
+				</form>
+			</div>
+		</section>
+		<section class = "section-tabs">
+			<div class="container">
+				<div class="tabs-inner">
+					<ul class="tabs">
+						<li class="active">
+							<a href="#tab1">Завтрак</a>
+						</li>
+						<li>
+							<a href="#tab2">Второй завтрак</a>
+						</li>
+						<li>
+							<a href="#tab3">Обед</a>
+						</li>
+						<li>
+							<a href="#tab4">Полдник</a>
+						</li>
+						<li>
+							<a href="#tab5">Ужин</a>
+						</li>
+						<li>
+							<a href="#tab6">Второй ужин</a>
+						</li>
+					</ul>
+
+					<div class="tabs-content">
+						<div class="tabs-item" id = "tab1">
+							<div class="row">
+								<div>Белки, г</div>
+								<div>Жиры, г</div>
+								<div>Углеводы, г</div>
+								<div>Ккал</div>
+								<div>Вес, г</div>
+								<div>Наименование продукта</div>
+							</div>
+							<div class="row sum">
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div class = "weight"></div>
+								<div>Сумма</div>
+							</div>
+							<div class="row normal">
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div>Норма</div>
+							</div>
+							<div class="row">
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div class="add-product">
+									<input type="text" name="product" id = "name-product">
+									<button type="button" class = "add-btn">+</button>
+								</div>
+							</div>
+						</div>
+
+						<div class="tabs-item" id = "tab2">
+							<div class="row">
+								<div>Белки, г</div>
+								<div>Жиры, г</div>
+								<div>Углеводы, г</div>
+								<div>Вес, г</div>
+								<div>Ккал</div>
+								<div>Наименование продукта</div>
+							</div>
+							<div class="row sum">
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div>Сумма</div>
+							</div>
+							<div class="row normal">
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div>Норма</div>
+							</div>
+							<div class="row">
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div class="add-product">
+									<input type="text" name="product" id = "name-product">
+									<button type="button" class = "add-btn">+</button>
+								</div>
+							</div>
+						</div>
+
+						<div class="tabs-item" id = "tab3">
+							<div class="row">
+								<div>Белки, г</div>
+								<div>Жиры, г</div>
+								<div>Углеводы, г</div>
+								<div>Ккал</div>
+								<div>Вес, г</div>
+								<div>Наименование продукта</div>
+							</div>
+							<div class="row sum">
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div>Сумма</div>
+							</div>
+							<div class="row normal">
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div>Норма</div>
+							</div>
+							<div class="row">
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div class="add-product">
+									<input type="text" name="product" id = "name-product">
+									<button type="button" class = "add-btn">+</button>
+								</div>
+							</div>
+						</div>
+
+						<div class="tabs-item" id = "tab4">
+							<div class="row">
+								<div>Белки, г</div>
+								<div>Жиры, г</div>
+								<div>Углеводы, г</div>
+								<div>Ккал</div>
+								<div>Вес, г</div>
+								<div>Наименование продукта</div>
+							</div>
+							<div class="row sum">
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div>Сумма</div>
+							</div>
+							<div class="row normal">
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div>Норма</div>
+							</div>
+							<div class="row">
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div class="add-product">
+									<input type="text" name="product" id = "name-product">
+									<button type="button" class = "add-btn">+</button>
+								</div>
+							</div>
+						</div>
+
+						<div class="tabs-item" id = "tab5">
+							<div class="row">
+								<div>Белки, г</div>
+								<div>Жиры, г</div>
+								<div>Углеводы, г</div>
+								<div>Ккал</div>
+								<div>Вес, г</div>
+								<div>Наименование продукта</div>
+							</div>
+							<div class="row sum">
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div>Сумма</div>
+							</div>
+							<div class="row normal">
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div>Норма</div>
+							</div>
+							<div class="row">
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div class="add-product">
+									<input type="text" name="product" id = "name-product">
+									<button type="button" class = "add-btn">+</button>
+								</div>
+							</div>
+						</div>
+
+						<div class="tabs-item" id = "tab6">
+							<div class="row">
+								<div>Белки, г</div>
+								<div>Жиры, г</div>
+								<div>Углеводы, г</div>
+								<div>Ккал</div>
+								<div>Вес, г</div>
+								<div>Наименование продукта</div>
+							</div>
+							<div class="row sum">
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div>Сумма</div>
+							</div>
+							<div class="row normal">
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div>Норма</div>
+							</div>
+							<div class="row">
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div class="add-product">
+									<input type="text" name="product" id = "name-product">
+									<button type="button" class = "add-btn">+</button>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class = "section-sum">
+			<div class="container">
+				<p>Осталось, ккал: <span>0</span></p>
+				<p>Превышение, ккал: <span>0</span></p>
+				<p>Осталось в общем, ккал: <span>0</span></p>
+			</div>			
+		</section>
+	</div>
+</body>
+</html>
