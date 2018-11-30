@@ -1,15 +1,16 @@
-## Nutrients-Calculator
+# Nutrients-Calculator
 
-# How to start:
-- add node_modules
+## How to start:
+1. add node_modules
 ```
 npm i
+#1589F0
 ```
-- build dist folder
+2. build dist folder
 ```
 npm webpack
 ```
-- start server
+3. start server
 ```
 npx webpack-dev-server
 ```
