@@ -12,7 +12,7 @@
 		<section class="section-user">
 			<div class="container">
 				<strong>Введите данные для расчета:</strong>
-				<form method="post">
+				<form>
 					<div class="form-inner">
 						<div class="col">
 							<input type="text" name="height" placeholder="Рост, см">
@@ -47,6 +47,7 @@
 							</select>
 						</div>
 					</div>
+					<button type="submit">Рассчитать норму</button>
 				</form>
 			</div>
 		</section>
@@ -88,8 +89,8 @@
 								<div></div>
 								<div></div>
 								<div></div>
+								<div class="sum-kcal"></div>
 								<div></div>
-								<div class = "weight"></div>
 								<div>Сумма</div>
 							</div>
 							<div class="row normal">
@@ -107,6 +108,7 @@
 								<div></div>
 								<div></div>
 								<div class="add-product">
+									<div>Add product</div>
 									<input type="text" name="product" id = "name-product">
 									<button type="button" class = "add-btn">+</button>
 								</div>
@@ -118,15 +120,15 @@
 								<div>Белки, г</div>
 								<div>Жиры, г</div>
 								<div>Углеводы, г</div>
-								<div>Вес, г</div>
 								<div>Ккал</div>
+								<div>Вес, г</div>
 								<div>Наименование продукта</div>
 							</div>
 							<div class="row sum">
 								<div></div>
 								<div></div>
 								<div></div>
-								<div></div>
+								<div class="sum-kcal"></div>
 								<div></div>
 								<div>Сумма</div>
 							</div>
@@ -145,6 +147,7 @@
 								<div></div>
 								<div></div>
 								<div class="add-product">
+									<div>Add product</div>
 									<input type="text" name="product" id = "name-product">
 									<button type="button" class = "add-btn">+</button>
 								</div>
@@ -164,7 +167,7 @@
 								<div></div>
 								<div></div>
 								<div></div>
-								<div></div>
+								<div class="sum-kcal"></div>
 								<div></div>
 								<div>Сумма</div>
 							</div>
@@ -183,6 +186,7 @@
 								<div></div>
 								<div></div>
 								<div class="add-product">
+									<div>Add product</div>
 									<input type="text" name="product" id = "name-product">
 									<button type="button" class = "add-btn">+</button>
 								</div>
@@ -202,7 +206,7 @@
 								<div></div>
 								<div></div>
 								<div></div>
-								<div></div>
+								<div class="sum-kcal"></div>
 								<div></div>
 								<div>Сумма</div>
 							</div>
@@ -221,6 +225,7 @@
 								<div></div>
 								<div></div>
 								<div class="add-product">
+									<div>Add product</div>
 									<input type="text" name="product" id = "name-product">
 									<button type="button" class = "add-btn">+</button>
 								</div>
@@ -240,7 +245,7 @@
 								<div></div>
 								<div></div>
 								<div></div>
-								<div></div>
+								<div class="sum-kcal"></div>
 								<div></div>
 								<div>Сумма</div>
 							</div>
@@ -259,6 +264,7 @@
 								<div></div>
 								<div></div>
 								<div class="add-product">
+									<div>Add product</div>
 									<input type="text" name="product" id = "name-product">
 									<button type="button" class = "add-btn">+</button>
 								</div>
@@ -278,7 +284,7 @@
 								<div></div>
 								<div></div>
 								<div></div>
-								<div></div>
+								<div class="sum-kcal"></div>
 								<div></div>
 								<div>Сумма</div>
 							</div>
@@ -297,6 +303,7 @@
 								<div></div>
 								<div></div>
 								<div class="add-product">
+									<div>Add product</div>
 									<input type="text" name="product" id = "name-product">
 									<button type="button" class = "add-btn">+</button>
 								</div>
@@ -310,9 +317,9 @@
 
 		<section class = "section-sum">
 			<div class="container">
-				<p>Осталось, ккал: <span>0</span></p>
-				<p>Превышение, ккал: <span>0</span></p>
-				<p>Осталось в общем, ккал: <span>0</span></p>
+				<h2>Дневной показатель</h2>
+				<div>Норма, ккал: <span>0</span></div>
+				<div id="main-sum-kcal">Фактически, ккал: <span>0</span></div>
 			</div>			
 		</section>
 	</div>

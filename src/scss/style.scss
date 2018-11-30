@@ -116,7 +116,7 @@ ul {
 			& > * {
 				min-width: 100px;
 				width: 100%;
-				margin: 0 5px;
+				padding: 0 5px;
 				border-right: 1px solid black;
 				text-align: center;
 				overflow-x: hidden;
@@ -133,6 +133,12 @@ ul {
 					width: 100%;
 					max-width: 100px;
 				}
+			}
+		}
+
+		.add-product {
+			div {
+				margin-bottom: 10px;
 			}
 		}
 
