@@ -29,6 +29,7 @@ body {
 
 .form-inner {
 	display: flex;
+	flex-wrap: wrap;
 	margin-left: -10px;
 	margin-right: -10px;
 	padding-top: 20px;
@@ -36,7 +37,7 @@ body {
 }
 
 .col {
-	width: 33%;
+	width: 30%;
 	display: flex;
 	flex-direction: column;
 	padding-left: 10px;
@@ -148,10 +149,11 @@ ul {
 	}
 }
 
-.col-9 {
-	width: calc(100% / 12 * 9);
+.novalid {
+	border-color: red;
 }
 
-.col-3 {
-	width: calc(100% / 12 * 3);
+.error-message {
+	padding-left: 10px;
+	padding-right: 10px;
 }

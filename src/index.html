@@ -15,39 +15,43 @@
 				<form>
 					<div class="form-inner">
 						<div class="col">
-							<input type="text" name="height" placeholder="Рост, см">
-							<input type="text" name="weight" placeholder="Вес, кг">
-							<input type="text" name="age" placeholder="Количество полных лет">
-							<select name="sex">
-								<option value="">мужской</option>
-								<option value="">женский</option>
+							<input type="text" id="height" placeholder="Рост, см">
+							<input type="text" id="weight" placeholder="Вес, кг">
+							<input type="text" id="age" placeholder="Количество полных лет">
+							<select name="sex" id="sex">
+								<option value="" disabled selected>выберите пол</option>
+								<option value="5">мужской</option>
+								<option value="-161">женский</option>
 							</select>
 						</div>
 						<div class="col">
-							<select name="sport">
-								<option value="">5-7 раз в неделю</option>
-								<option value="">3-5 раз в неделю</option>
-								<option value="">1 раз в неделю</option>
-								<option value="">нет</option>
+							<select name="sport" id="sport">
+								<option value="" disabled selected>Ваш уровень активности</option>
+								<option value="1.2">минимальный уровень физнагрузки</option>
+								<option value="1.35">легкий уровень активности</option>
+								<option value="1.55">средняя активность</option>
+								<option value="1.75">активность высокого уровня</option>
+								<option value="1.95">экстремально высокая активность</option>
 							</select>
-							<select name="eating">
+							<!-- <select name="eating">
 								<option value="">6</option>
 								<option value="">5</option>
 								<option value="">4</option>
 								<option value="">3</option>
 								<option value="">2</option>
 								<option value="">1</option>
-							</select>
+							</select> -->
 						</div>
 						<div class="col">
-							<select name="target">
-								<option value="">набор массы</option>
-								<option value="">поддержание массы</option>
-								<option value="">сброс массы</option>
+							<select name="target" id="target">
+								<option value="" disabled selected>Ваша цель</option>
+								<option value="+0.15">набор массы</option>
+								<option value="+0">поддержание веса</option>
+								<option value="-0.15">сброс массы</option>
 							</select>
 						</div>
 					</div>
-					<button type="submit">Рассчитать норму</button>
+					<button type="submit" id="calc-norm">Рассчитать норму</button>
 				</form>
 			</div>
 		</section>
@@ -309,17 +313,17 @@
 								</div>
 							</div>
 						</div>
-
 					</div>
 				</div>
 			</div>
 		</section>
 
 		<section class = "section-sum">
-			<div class="container">
+			<div class="container" id="total">
 				<h2>Дневной показатель</h2>
-				<div>Норма, ккал: <span>0</span></div>
+				<div id="target-kcal">Норма, ккал: <span>0</span></div>
 				<div id="main-sum-kcal">Фактически, ккал: <span>0</span></div>
+				<div id="recommendation"></div>
 			</div>			
 		</section>
 	</div>
