@@ -115,7 +115,13 @@ $(function() {
 	let productNamesArray = [];
 
 
-	fetch(document.location + "/db/db_product.json")
+	fetch(document.location + "/db/db_product.json", {
+		headers : { 
+			'Content-Type': 'application/json',
+			'Accept': 'application/json'
+		}
+
+	})
 	.then(
 		(response) => response.json(),
 		(error) => {console.log(error)}
@@ -242,11 +248,12 @@ $(function() {
 			$("#target-kcal span").html(targetBMR.toFixed(2));
 
 			let unitProportion = targetBMR / 6;
-			let protein = lipid = unitProportion;
+			let protein = unitProportion;
+			let lipid = unitProportion;
 			let carbohydrt = unitProportion * 4;
 
 			let normalArray;
-			for(key in tabObjects) {
+			for(let key in tabObjects) {
 				normalArray = $(tabObjects[key].id).children(".normal").children("div");
 				$(normalArray[0]).html((tabObjects[key].kPLC.kProtein * protein / 4).toFixed(2));
 				$(normalArray[1]).html((tabObjects[key].kPLC.kLipid * lipid / 9).toFixed(2));
