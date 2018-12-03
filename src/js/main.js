@@ -115,7 +115,7 @@ $(function() {
 	let productNamesArray = [];
 
 
-	fetch("http://localhost:8080/db/db_product.json")
+	fetch(document.location + "/db/db_product.json")
 	.then(
 		(response) => response.json(),
 		(error) => {console.log(error)}
@@ -160,8 +160,6 @@ $(function() {
 					.on('click', function() {
 						$(this).select();
 					});
-
-					
 
 					tabObjects[currentelem].calculateNutrients();
 
