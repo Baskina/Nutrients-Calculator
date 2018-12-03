@@ -7,7 +7,7 @@ npm i
 ```
 2. build dist folder
 ```
-npm webpack
+npx webpack
 ```
 3. start server
 ```
