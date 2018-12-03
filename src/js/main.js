@@ -5,9 +5,14 @@ $(function() {
 	let standartWeight = 100;
 
 	class TabObject {
-		constructor(id) {
+		constructor(id, kArray) {
 			this.id = id;
 			this.weightOldArray = [];
+			this.kPLC = {
+				kProtein: kArray[0],
+				kLipid: kArray[1],
+				kCarbohydrt: kArray[2]
+			};
 		}
 
 		addProduct(object) {
@@ -76,13 +81,14 @@ $(function() {
 	}
 
 	let buttons = $(".tabs li");
+	let kArray = [[0.09, 0.25, 0.35], [0.16, 0.07, 0.15], [0.19, 0.3, 0.3], [0.1, 0.15, 0.12], [0.39, 0.15, 0.05], [0.07, 0.08, 0.03]];
 
 	toggleTab();
 
 	function toggleTab() {
-		buttons.each(function(){
+		buttons.each(function(index){
 			let tab_id = $(this.innerHTML).attr('href');
-			tabObjects[tab_id] = new TabObject(tab_id);
+			tabObjects[tab_id] = new TabObject(tab_id, kArray[index]);
 			$(tab_id).css("display", "none");
 		});
 		$(currentelem).css("display", "block");
@@ -228,10 +234,18 @@ $(function() {
 			let protein = lipid = unitProportion;
 			let carbohydrt = unitProportion * 4;
 
-			let normalArray = $(".normal div");
-			$(normalArray[0]).html(protein.toFixed(2));
-			$(normalArray[1]).html(lipid.toFixed(2));
-			$(normalArray[2]).html(carbohydrt.toFixed(2));
+			let normalArray;
+			for(key in tabObjects) {
+				normalArray = $(tabObjects[key].id).children(".normal").children("div");
+				// console.log($(tabObjects[key].id).children(".normal").children("div"));
+				console.log(tabObjects[key]);
+				console.log(tabObjects[key].kPLC);
+				console.log(tabObjects[key].kPLC.protein);
+				$(normalArray[0]).html((tabObjects[key].kPLC.kProtein * protein / 4).toFixed(2));
+				$(normalArray[1]).html((tabObjects[key].kPLC.kLipid * lipid / 9).toFixed(2));
+				$(normalArray[2]).html((tabObjects[key].kPLC.kCarbohydrt * carbohydrt / 4).toFixed(2));
+				$(normalArray[3]).html((tabObjects[key].kPLC.kProtein * protein + tabObjects[key].kPLC.kLipid * lipid + tabObjects[key].kPLC.kCarbohydrt * carbohydrt).toFixed(2));
+			}
 			
 			recommendation = totalResult();
 			$("#recommendation").html(recommendation);
