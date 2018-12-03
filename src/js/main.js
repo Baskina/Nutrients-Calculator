@@ -112,6 +112,7 @@ $(function() {
 	let sumProdKcal = 0;
 	let targetBMR = 0;
 	let recommendation;
+	let productNamesArray = [];
 
 
 	fetch("http://localhost:8080/db/db_product.json")
@@ -120,9 +121,21 @@ $(function() {
 		(error) => {console.log(error)}
 		)
 	.then(function(mainProductBase) {
+
+		productNamesArray = ["apple", "butter", "banana", "pear", "meet", "oil"];
+
+		// $.each(mainProductBase, function(key, elem) {
+		// 	productNamesArray.push(elem["Shrt_Desc"]);
+		// });
+		// console.log(productNamesArray);
+
+		$(".name-product").autocomplete({
+			source: productNamesArray
+		});
+
 		$('.add-btn').on("click", function(event) {
 
-			let userProductStr = $(`${currentelem} #name-product`)
+			let userProductStr = $(`${currentelem} .name-product`)
 			.val()
 			.toUpperCase();
 
@@ -237,10 +250,6 @@ $(function() {
 			let normalArray;
 			for(key in tabObjects) {
 				normalArray = $(tabObjects[key].id).children(".normal").children("div");
-				// console.log($(tabObjects[key].id).children(".normal").children("div"));
-				console.log(tabObjects[key]);
-				console.log(tabObjects[key].kPLC);
-				console.log(tabObjects[key].kPLC.protein);
 				$(normalArray[0]).html((tabObjects[key].kPLC.kProtein * protein / 4).toFixed(2));
 				$(normalArray[1]).html((tabObjects[key].kPLC.kLipid * lipid / 9).toFixed(2));
 				$(normalArray[2]).html((tabObjects[key].kPLC.kCarbohydrt * carbohydrt / 4).toFixed(2));
