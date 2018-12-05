@@ -128,7 +128,7 @@ $(function() {
 		)
 	.then(function(mainProductBase) {
 
-		productNamesArray = ["apple", "butter", "banana", "pear", "meet", "oil"];
+		productNamesArray = ["apple", "butter", "banana", "pear", "meat", "oil"];
 
 		// $.each(mainProductBase, function(key, elem) {
 		// 	productNamesArray.push(elem["Shrt_Desc"]);
