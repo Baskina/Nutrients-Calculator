@@ -7,7 +7,7 @@ npm i
 ```
 2. build dist folder
 ```
-npm buid
+npm build
 ```
 3. start server
 ```
